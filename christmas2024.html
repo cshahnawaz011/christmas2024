@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas 2024</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #0d47a1, #1e88e5);
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            padding: 2rem 1rem;
+            background: linear-gradient(to bottom, #1e88e5, #64b5f6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            animation: sparkle 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Main Section */
+        .main {
+            padding: 2rem;
+        }
+
+        .why-christmas,
+        .fun-facts {
+            margin: 2rem 0;
+        }
+
+        .why-christmas h2,
+        .fun-facts h2 {
+            font-size: 2rem;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px #000;
+            margin-bottom: 1rem;
+        }
+
+        .why-christmas p,
+        .fun-facts ul {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .fun-facts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .fun-facts li {
+            margin: 0.5rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d47a1;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        /* Snowflake Animation */
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            font-size: 1.5rem;
+            color: #fff;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b;
+            }
+            50% {
+                text-shadow: 0 0 20px #ffb300, 0 0 30px #ffb300, 0 0 40px #ffb300;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <header class="header">
+        <h1 class="title">Merry Christmas 2024</h1>
+        <p class="subtitle">Celebrate the magic, joy, and wonder of the holiday season!</p>
+    </header>
+
+    <main class="main">
+        <section class="why-christmas">
+            <h2>Why Do We Celebrate Christmas?</h2>
+            <p>
+                Christmas is celebrated to commemorate the birth of Jesus Christ, bringing joy, love, and hope to millions. 
+                It’s a time for family, giving, and spreading kindness across the world.
+            </p>
+        </section>
+
+        <section class="fun-facts">
+            <h2>Fun Facts About Christmas</h2>
+            <ul>
+                <li>The tradition of Christmas trees began in Germany.</li>
+                <li>The first Christmas card was sent in 1843.</li>
+                <li>Santa Claus is based on St. Nicholas, a real-life monk.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Shahnawaz chaudhary. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create additional falling snowflakes dynamically
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+
+            // Randomize the position and animation duration
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDuration = `${Math.random() * 3 + 5}s`; // 5 to 8 seconds
+            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // 10px to 20px
+            snowflake.style.opacity = Math.random();
+
+            // Append to the body
+            document.body.appendChild(snowflake);
+
+            // Remove after animation
+            setTimeout(() => {
+                snowflake.remove();
+            }, 8000);
+        }
+
+        // Generate snowflakes every 500ms
+        setInterval(createSnowflake, 500);
+    </script>
+</body>
+</html>
